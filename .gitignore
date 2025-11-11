@@ -1,0 +1,50 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.bak
+*.obj
+*.pdb
+*.log
+*.ncb
+*.scc
+*.vssscc
+*.vspscc
+*.vsp
+*.builds
+*.cache
+*.docstates
+
+# Build Results
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+*.exe
+*.dll
+*.exp
+*.lib
+*.ilk
+*.idb
+*.res
+*.tlb
+*.tlh
+*.tmp
+*.o
+
+# NuGet
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Resharper
+*.resharper
+*.resharper.user
+
+# Rider
+.idea/
+
+# Other
+Thumbs.db
+Desktop.ini

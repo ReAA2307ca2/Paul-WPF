@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp1.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows"
+        mc:Ignorable="d"
+        Title="RegisterWindow" Height="300" Width="300">
+    <StackPanel Margin="15">
+        <Label FontSize="20">Name</Label>
+        <TextBox FontSize="18" Name="tbox_name"></TextBox>
+
+        <Label FontSize="20">Login</Label>
+        <TextBox FontSize="18" Name="tbox_login"></TextBox>
+
+        <Label FontSize="20">Password</Label>
+        <TextBox FontSize="18" Name="tbox_pass"></TextBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10">
+            <Button Click="bt_cancel_Click" Name="bt_cancel" FontSize="18" Margin="5 0">Cancel</Button>
+            <Button Click="bt_register_Click" Name="bt_register" FontSize="18" Margin="5 0">Register</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

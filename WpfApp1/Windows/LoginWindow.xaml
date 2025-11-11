@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp1.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="250" Width="300">
+    <StackPanel Margin="15px">
+        <TextBlock FontSize="28">Логин</TextBlock>
+        <TextBox Name="tbox_login" FontSize="18"></TextBox>
+        <TextBlock FontSize="28">Пароль</TextBlock>
+        <TextBox Name="tbox_pass" FontSize="18"></TextBox>
+
+        <StackPanel Margin="0 10 0 0" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            <Button Click="bt_cancel_Click" Margin="15 0" Name="bt_cancel" FontSize="18">Cancel</Button>
+            <Button Click="bt_register_Click" Name="bt_register" FontSize="18">Register</Button>
+            <Button Click="bt_login_Click" Margin="15 0" Name="bt_login" FontSize="18">Login</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
