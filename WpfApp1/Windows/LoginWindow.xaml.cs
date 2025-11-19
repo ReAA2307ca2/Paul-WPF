@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,9 @@ namespace WpfApp1.Windows
             if(!string.IsNullOrEmpty(tbox_login.Text.Trim()) 
                 && !string.IsNullOrEmpty(tbox_pass.Text.Trim()))
             {
-                User? loggedUser = _context.Users.Where(
+                User? loggedUser = _context.Users
+                    .Include(u => u.Role)
+                    .Where(
                     u => u.Login == tbox_login.Text.Trim()
                     && u.Password == tbox_pass.Text.Trim()).FirstOrDefault();
                 if (loggedUser != null)
@@ -55,6 +58,13 @@ namespace WpfApp1.Windows
         {
             RegisterWindow registerWindow = new(_context);
             registerWindow.ShowDialog();
+        }
+
+        private void bt_guest_Click(object sender, RoutedEventArgs e)
+        {
+            LoginCookies.loggedUser = null;
+            DialogResult = true;
+            return;
         }
     }
 }

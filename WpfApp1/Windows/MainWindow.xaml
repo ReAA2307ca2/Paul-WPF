@@ -5,23 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Equipment List" Height="450" Width="800">
     <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Margin="0 5" Orientation="Horizontal">
-            <Button Click="bt_create_Click" Margin="0 0 5 0" Name="bt_create" Padding="5">Create new</Button>
-            <Button Click="bt_edit_Click" Margin="0 0 5 0" Name="bt_edit" Padding="5">Edit</Button>
-            <Button Click="bt_delete_Click" Margin="0 0 5 0" Name="bt_delete" Padding="5">Delete</Button>
-        </StackPanel>
-        <ListView Grid.Row="1" Name="lv_orders" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
+        <DockPanel Margin="0 5" LastChildFill="False">
+            <StackPanel Name="stp_options" Orientation="Horizontal">
+                <StackPanel Name="stp_crud" Orientation="Horizontal">
+                    <Button DockPanel.Dock="Left" Click="bt_create_Click" Margin="0 0 5 0" Name="bt_create" Padding="5">Create new</Button>
+                    <Button DockPanel.Dock="Left" Click="bt_edit_Click" Margin="0 0 5 0" Name="bt_edit" Padding="5">Edit</Button>
+                    <Button DockPanel.Dock="Left" Click="bt_delete_Click" Margin="0 0 5 0" Name="bt_delete" Padding="5">Delete</Button>
+                </StackPanel>
+                <ComboBox SelectionChanged="cb_sort_SelectionChanged" Name="cb_sort" Margin="5 0" Width="150">
+                    <ComboBoxItem>
+                        <TextBlock>No sort</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>Ascending</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>Descending</TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+                <ComboBox SelectionChanged="cb_filter_SelectionChanged" Name="cb_filter" Margin="5 0" Width="150">
+                    <ComboBoxItem>
+                        <TextBlock>No filter</TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <TextBlock Name="tb_userName" FontSize="20" DockPanel.Dock="Right" VerticalAlignment="Center">UserName</TextBlock>
+            <Button DockPanel.Dock="Right" Click="bt_quit_Click" Margin="0 0 5 0" Name="bt_quit" Padding="5">Quit</Button>
+
+        </DockPanel>
+
+        <TextBox Name="tbox_search" Grid.Row="1" FontSize="18"></TextBox>
+        
+        <ListView Grid.Row="2" Name="lv_orders" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+
+        <DockPanel Grid.Row="3" LastChildFill="False">
+            <Button Click="bt_seeOrders_Click" DockPanel.Dock="Left" Margin="0 0 5 0" Name="bt_seeOrders" Padding="5">Create new</Button>
+            
+            <TextBlock Name="tb_userRole" DockPanel.Dock="Right" FontSize="20" VerticalAlignment="Center">UserRole</TextBlock>
+        </DockPanel>
     </Grid>
 </Window>
